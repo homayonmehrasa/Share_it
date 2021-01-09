@@ -9,5 +9,13 @@
         tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="ir.kurd.shareit.ui.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_installedAppsFragment"
+            app:destination="@id/installedAppsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/installedAppsFragment"
+        android:name="ir.kurd.shareit.ui.installedapps.InstalledAppsFragment"
+        android:label="InstalledAppsFragment" />
 </navigation>

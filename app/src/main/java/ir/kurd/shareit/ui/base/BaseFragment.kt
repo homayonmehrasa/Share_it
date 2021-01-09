@@ -21,6 +21,7 @@ abstract class BaseFragment<T:BaseViewModel,B:ViewBinding>: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         observeUiState()
         initNavController()
+        init()
     }
 
 
@@ -62,5 +63,8 @@ abstract class BaseFragment<T:BaseViewModel,B:ViewBinding>: Fragment() {
     private fun initNavController() {
         navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
     }
+
+  abstract fun init ()
+
 
 }
