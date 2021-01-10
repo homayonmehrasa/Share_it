@@ -10,6 +10,7 @@ import ir.kurd.shareit.model.file.FilesModel
 class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private var clickListener: ClickListener? = null
 
     override fun getItemViewType(position: Int): Int {
         val isDir = fileslist[position].mIsDirectory
@@ -19,10 +20,6 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
 
 
     }
-
-
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -39,11 +36,11 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
 
     }
 
-
     override fun getItemCount(): Int {
      return   fileslist.size
 
     }
+
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         val item =fileslist[position]
@@ -53,7 +50,9 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
                holder as DirViewHolder
                holder.dirName.text = item.mName
                holder.dirDesc.text = item.mChildren.toString()
-
+               holder.itemView.setOnClickListener{
+                   clickListener?.onFolderClick(item)
+               }
 
            }
            VIEW_FILE ->{
@@ -65,23 +64,42 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
                holder.nameFile.text= item.mName
                holder.size.text =size
 
+               holder.itemView.setOnClickListener {
+                   clickListener?.onFileClick(item)
+               }
+
 
 
            }
        }
 
+    }
+
+    interface ClickListener {
+
+
+        fun onFolderClick(item : FilesModel)
+        fun onFileClick(item : FilesModel)
+    }
+
+    fun setOnItemClickListener(clickListener: ClickListener) {
+
+        this.clickListener = clickListener
 
     }
 
-    inner class FileViewHolder (binding: ItemFileManagerFileBinding):RecyclerView.ViewHolder(binding.root){
+
+    inner class FileViewHolder
+    (binding: ItemFileManagerFileBinding)
+        :RecyclerView.ViewHolder(binding.root)  {
 
         val imgFile = binding.fileImageView
         val nameFile = binding.fileName
         val size = binding.fileDesc
 
 
-
     }
+
     inner class DirViewHolder(binding:ItemFileManagerBinding) : RecyclerView.ViewHolder(binding.root) {
         val dirImg = binding.itemImageView
         val dirName = binding.itemName
@@ -90,11 +108,13 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
 
 
     }
+
     fun updateData(newData:ArrayList<FilesModel>){
         fileslist.clear()
         fileslist.addAll(newData)
         notifyDataSetChanged()
     }
+
     companion object {
         const val VIEW_FILE = 1
         const val VIEW_FOLDER= 2

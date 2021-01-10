@@ -19,6 +19,7 @@ import java.util.HashMap
 class FileManagerFragment : BaseFragment <FileManagerVM , FragmentFileManagerBinding> (){
 
     val filemanagerAdapter = FilemanagerAdapter(arrayListOf())
+    val navAdapter = NavDirAdapter(arrayListOf())
 
     override val vm : FileManagerVM by viewModel()
     override fun onCreateView(inflater: LayoutInflater
@@ -48,9 +49,34 @@ class FileManagerFragment : BaseFragment <FileManagerVM , FragmentFileManagerBin
             Toast.makeText(requireContext(), "Item received ${items.size}", Toast.LENGTH_SHORT).show()
 
 
+
             val sortedItems = items.sortedWith(compareByDescending(FilesModel::mIsDirectory).thenBy(FilesModel::mName))
             binding.FilemanagerRecyclerView.adapter = filemanagerAdapter
             filemanagerAdapter.updateData(ArrayList(sortedItems))
+
+            filemanagerAdapter.setOnItemClickListener(
+                    object : FilemanagerAdapter.ClickListener{
+
+                        override fun onFolderClick(item: FilesModel) {
+
+
+                        }
+
+                        override fun onFileClick(item: FilesModel) {
+
+                        }
+
+
+                    }
+
+
+
+            )
+
+
+
+            val dir = FilesModel::mPath
+            binding.navRecyclerView.adapter=navAdapter
 
         }
 
