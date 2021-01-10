@@ -13,9 +13,16 @@
         <action
             android:id="@+id/action_mainFragment_to_installedAppsFragment"
             app:destination="@id/installedAppsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fileManagerFragment"
+            app:destination="@id/fileManagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/installedAppsFragment"
         android:name="ir.kurd.shareit.ui.installedapps.InstalledAppsFragment"
         android:label="InstalledAppsFragment" />
+    <fragment
+        android:id="@+id/fileManagerFragment"
+        android:name="ir.kurd.shareit.ui.filemanager.FileManagerFragment"
+        android:label="FileManagerFragment" />
 </navigation>

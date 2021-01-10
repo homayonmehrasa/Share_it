@@ -19,6 +19,7 @@ import com.karumi.dexter.listener.single.PermissionListener
 import ir.kurd.shareit.R
 
 abstract class BaseFragment<T:BaseViewModel,B:ViewBinding>: Fragment() {
+
     abstract val vm :T
     lateinit var  binding:B
     var loadingView : View?=null

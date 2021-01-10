@@ -31,6 +31,11 @@ class MainFragment: BaseFragment<MainVM,FragmentMainBinding>() {
         binding.button.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_installedAppsFragment)
 
+
+        }
+        binding.filemanagerbtn.setOnClickListener {
+
+            navController.navigate(R.id.action_mainFragment_to_fileManagerFragment)
         }
 
 
