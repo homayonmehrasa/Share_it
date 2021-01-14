@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="4dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    xmlns:Tools="http://schemas.android.com/apk/res-auto"
+    xmlns:Toosl="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:gravity="bottom"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/imageVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/purple_200"/>
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/durationTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="1dp"
+            android:background="#8D292929"
+            android:text="12:08"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/nameVideo"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        Toosl:text ="test "
+        android:maxLines="1"
+
+        android:textSize="15sp"/>
+
+</LinearLayout>

@@ -16,6 +16,15 @@
         <action
             android:id="@+id/action_mainFragment_to_fileManagerFragment"
             app:destination="@id/fileManagerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ImagesFragment"
+            app:destination="@id/ImagesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
     </fragment>
     <fragment
         android:id="@+id/installedAppsFragment"
@@ -25,4 +34,20 @@
         android:id="@+id/fileManagerFragment"
         android:name="ir.kurd.shareit.ui.filemanager.FileManagerFragment"
         android:label="FileManagerFragment" />
+    <fragment
+        android:id="@+id/ImagesFragment"
+        android:name="ir.kurd.shareit.ui.images.ImagesFragment"
+        android:label="ImagesFragment" />
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="ir.kurd.shareit.ui.music.MusicFragment"
+        android:label="MusicFragment"/>
+
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="ir.kurd.shareit.ui.video.VideoFragment"
+        android:label="VideoFragment"/>
+
+
+
 </navigation>

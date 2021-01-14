@@ -95,5 +95,24 @@ abstract class BaseFragment<T:BaseViewModel,B:ViewBinding>: Fragment() {
 
         }).check()
     }
+    fun requestReadStoragePermission(callback:(Boolean)->Unit){
+        Dexter.withContext(requireContext()).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(object:PermissionListener{
+            override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                callback(true)
+            }
+
+            override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                callback(false)
+            }
+
+            override fun onPermissionRationaleShouldBeShown(
+                    p0: PermissionRequest?,
+                    p1: PermissionToken?
+            ) {
+                p1?.continuePermissionRequest()
+            }
+
+        }).check()
+    }
 
 }

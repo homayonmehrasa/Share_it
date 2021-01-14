@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import ir.kurd.shareit.R
 import ir.kurd.shareit.databinding.FragmentMainBinding
 import ir.kurd.shareit.ui.base.BaseFragment
-import org.koin.androidx.viewmodel.compat.ViewModelCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment: BaseFragment<MainVM,FragmentMainBinding>() {
@@ -28,7 +27,12 @@ class MainFragment: BaseFragment<MainVM,FragmentMainBinding>() {
 
     }
     fun setUpOnClicks (){
-        binding.button.setOnClickListener {
+        binding.imagesbtn.setOnClickListener{
+
+            navController.navigate(R.id.action_mainFragment_to_ImagesFragment)
+        }
+
+        binding.installedAppsBtn.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_installedAppsFragment)
 
 
@@ -38,7 +42,14 @@ class MainFragment: BaseFragment<MainVM,FragmentMainBinding>() {
             navController.navigate(R.id.action_mainFragment_to_fileManagerFragment)
         }
 
+        binding.musicBtn.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_musicFragment)
 
+        }
+
+        binding.videoBtn.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_videoFragment)
+        }
     }
 
 
