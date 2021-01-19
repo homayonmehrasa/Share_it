@@ -50,6 +50,9 @@ class MainFragment: BaseFragment<MainVM,FragmentMainBinding>() {
         binding.videoBtn.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_videoFragment)
         }
+        binding.btnReceive.setOnClickListener {
+            navController.navigate(R.id.sendPrepareFragment)
+        }
     }
 
 

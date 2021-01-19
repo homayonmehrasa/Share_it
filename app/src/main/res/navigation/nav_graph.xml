@@ -47,7 +47,16 @@
         android:id="@+id/videoFragment"
         android:name="ir.kurd.shareit.ui.video.VideoFragment"
         android:label="VideoFragment"/>
-
+    <fragment
+        tools:layout="@layout/fragment_prepare_send"
+        android:id="@+id/sendPrepareFragment"
+        android:name="ir.kurd.shareit.ui.prepare.SendPrepareFragment"
+        android:label="SendPrepareFragment" />
+    <fragment
+        tools:layout="@layout/fragment_test_p2p"
+        android:id="@+id/testP2PFragment"
+        android:name="ir.kurd.shareit.ui.test.TestP2PFragment"
+        android:label="TestP2PFragment" />
 
 
 </navigation>

@@ -39,6 +39,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/musicBtn" />
 
+
+    <Button
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/videoBtn"
+        android:id="@+id/btnReceive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -58,4 +69,6 @@
         android:text="go to file manager "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
