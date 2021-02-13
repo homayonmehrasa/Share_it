@@ -38,7 +38,6 @@ class ImagesAdapter  ( val list : ArrayList<ImagesModel>,val callback:ImageCallb
     inner class ImageVH (binding: ItemImagesBinding): RecyclerView.ViewHolder(binding.root) {
 
         val img = binding.ImageViewItem
-        val imgName =binding.textViewItem
 
     }
 }

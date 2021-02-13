@@ -30,14 +30,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:layout_margin="5dp"
         android:id="@+id/musicSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:text="music size"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/musicImageView"
-        app:layout_constraintTop_toBottomOf="@+id/musicName" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <View
         android:layout_marginTop="5dp"
@@ -46,6 +45,18 @@
         android:layout_height="2dp"
         android:background="#A9676565"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:id="@+id/playBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/musicImageView"
+        android:src="@drawable/ic_play"
+        android:layout_marginLeft="4dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

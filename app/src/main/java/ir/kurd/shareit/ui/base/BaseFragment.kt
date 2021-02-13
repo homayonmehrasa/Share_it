@@ -2,6 +2,7 @@ package ir.kurd.shareit.ui.base
 
 import android.Manifest
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import com.karumi.dexter.listener.single.PermissionListener
 import ir.kurd.shareit.R
 
 abstract class BaseFragment<T:BaseViewModel,B:ViewBinding>: Fragment() {
+
 
     abstract val vm :T
     lateinit var  binding:B

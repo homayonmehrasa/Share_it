@@ -94,6 +94,11 @@ class VideoFragment : BaseFragment <VideoVM, FragmentVideoBinding >(){
             
         }
 
+    override fun onStop() {
+        super.onStop()
+
+        videoList.clear()
+    }
 
     }
 

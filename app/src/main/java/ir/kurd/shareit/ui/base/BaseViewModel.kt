@@ -6,8 +6,6 @@ import ir.kurd.shareit.utiles.SingleLiveEvent
 abstract class BaseViewModel: ViewModel() {
     var uiStateObservable = SingleLiveEvent<UiState>()
 
-
-
     fun onClear(){
 
     }

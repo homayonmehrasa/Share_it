@@ -41,7 +41,11 @@
     <fragment
         android:id="@+id/musicFragment"
         android:name="ir.kurd.shareit.ui.music.MusicFragment"
-        android:label="MusicFragment"/>
+        android:label="MusicFragment">
+        <action
+            android:id="@+id/action_musicFragment_to_misicPlayerFragment"
+            app:destination="@id/misicPlayerFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/videoFragment"
@@ -57,6 +61,20 @@
         android:id="@+id/testP2PFragment"
         android:name="ir.kurd.shareit.ui.test.TestP2PFragment"
         android:label="TestP2PFragment" />
+        android:label="VideoFragment">
+        <action
+            android:id="@+id/action_videoFragment_to_videoPlayerFragment"
+            app:destination="@id/videoPlayerFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/misicPlayerFragment"
+        android:name="ir.kurd.shareit.ui.music.MusicPlayerFragment"
+        android:label="MusicPlayerFragment"/>
+
+    <fragment
+        android:id="@+id/videoPlayerFragment"
+        android:name="ir.kurd.shareit.ui.video.VideoPlayerFragment"
+        android:label="VideoPlayerFragment"/>
 
 </navigation>

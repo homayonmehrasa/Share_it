@@ -14,9 +14,9 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
 
     override fun getItemViewType(position: Int): Int {
         val isDir = fileslist[position].mIsDirectory
-        if (isDir) {
-            return VIEW_FOLDER
-        }else return VIEW_FILE
+        return if (isDir) {
+            VIEW_FOLDER
+        }else VIEW_FILE
 
 
     }
@@ -32,7 +32,6 @@ class FilemanagerAdapter ( val fileslist : ArrayList<FilesModel>)
             return FileViewHolder(binding)
 
         }
-
 
     }
 

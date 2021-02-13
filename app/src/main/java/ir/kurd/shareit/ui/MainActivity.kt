@@ -11,6 +11,7 @@ import ir.kurd.shareit.ui.base.BaseActivity
 import java.io.File
 
 class MainActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

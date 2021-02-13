@@ -1,16 +1,21 @@
 package ir.kurd.shareit.ui.video
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import ir.kurd.shareit.R
 import ir.kurd.shareit.databinding.ItemVideoBinding
-import ir.kurd.shareit.model.music.Music_model
 import ir.kurd.shareit.model.video.Video_Model
 
 class VideoAdapter (val videos :  ArrayList <Video_Model>)
     : RecyclerView.Adapter <VideoAdapter.VideoVH>() {
+
+    lateinit var  navController : NavController
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoAdapter.VideoVH {
        val binding = ItemVideoBinding.inflate(LayoutInflater.from(parent.context), parent , false)
@@ -30,6 +35,18 @@ class VideoAdapter (val videos :  ArrayList <Video_Model>)
         else {
             holder.duration.text = "$h :$min : $sec"
         }
+
+        holder.itemView.setOnLongClickListener {
+
+
+            val bundle =  bundleOf("videoUri" to list.uri , "videoDuration" to list.durationVideo.toString())
+            navController = Navigation.findNavController(holder.img )
+            navController.navigate(R.id.action_videoFragment_to_videoPlayerFragment , bundle)
+
+            return@setOnLongClickListener true
+        }
+
+
         holder.name.text = list.videoName
 
         Glide

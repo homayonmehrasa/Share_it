@@ -60,9 +60,11 @@ class FileManagerFragment : BaseFragment <FileManagerVM , FragmentFileManagerBin
                         override fun onFolderClick(item: FilesModel) {
 
 
+
                         }
 
                         override fun onFileClick(item: FilesModel) {
+
 
                         }
 
